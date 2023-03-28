@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body onload="checkliked();CreateList()">
+  <header>
+    <a href="#" class="logo">Food <span>.</span></a>
+
+    <!--clickOn menu-->
+    <div class="menuToggle" onclick="toggleMenu();"></div>
+
+    <!--A space-separated list of the classes of the element. 
+            Classes allows CSS and JavaScript to select and access specific elements via the class selectors or functions like the method-->
+
+    <!--The ul element represents a list of items, 
+                where the order of the items is not important — that is, where changing the order would not materially change the meaning of the document.-->
+    <ul class="navigation">
+
+      <li><a href="#banner" onclick="toggleMenu();">Home</a></li>
+      <li><a href="#About" onclick="toggleMenu();">About</a></li>
+      <li><a href="#Menu" onclick="toggleMenu();">Menu</a></li>
+
+      <li><a href="#testimonials" onclick="toggleMenu();">Testimonials</a></li>
+      <li><a href="#Contact" onclick="toggleMenu();">Contact</a></li>
+      <li><a href="#Comment" onclick="toggleMenu();">Comments</a></li>
+      <li><a href="#SavedItems" onclick="toggleMenu();">Saved Items</a></li>
+
+    </ul>
+  </header>
+
+  <section class="banner" id="banner">
+    <div class="content">
+      <h2>Always choose good food</h2>
+      <p>
+        Studies have shown that people who skip breakfast can reach for more unhealthy foods later on, as hunger affects
+        food choices. Why not eat more healthy calories earlier in the day, to keep you fuller for longer.
+      </p>
+    </div>
+  </section>
+
+  <a href="#" class="btn">Our Menu</a>
+
+
+
+
+  <!--About page-->
+
+  <section class="about" id="About">
+    <div class="row">
+      <div class="col50">
+        <h2 class="titleText"><span>A</span>bout us</h2>
+        <p>
+          Home cooks are our heroes; it's as simple as that. Allrecipes is a community built by and for kitchen experts:
+          The cooks who will dedicate two days to a perfect beef bourguignon but love the simplicity of a slow-cooker
+          rendition, too. The bakers who labor over a showstopping 9-layer cake but will just as happily doctor boxed
+          brownies for a rich weeknight dessert. The entertainers who just want a solid snack spread, without spending
+          the whole evening shuffling dishes in and out of the oven.
+
+          Most importantly, Allrecipes connects home cooks with their greatest sources of inspiration — other home
+          cooks. We're the world's leading digital food brand, and that inspires us to do everything possible to keep
+          our community vibrant. Sixty-million home cooks deserve no less.
+        </p>
+      </div>
+
+      <div class="col50">
+        <div class="imgBx">
+          <img src="images/img1.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Our menu section page-->
+
+  <section class="menu" id="Menu">
+    <div class="title">
+      <h2 class="titleText">Our <span>M</span>enu</h2>
+      <p>Our new menu entails a combination of all different forms of cuisines to create a gastronomical wonder!</p>
+    </div>
+
+    <div class="content">
+
+
+
+      <div class="box">
+        <tr id="t1">
+          <div class="imgBx">
+            <img id="sp1" src="images/menu1.jpg" alt="" />
+          </div>
+          <div class="text">
+            <h3>Special Salads</h3>
+          </div>
+          <td><a class="a2" onclick="saveforlater('Special Salads','images/menu1.jpg')">Save for later</a></td> <br />
+          <td><a class="a3" onclick="like(event,'t1')">Like</a></td>
+      </div>
+      </tr>
+
+      <tr id="t2">
+        <div class="box">
+          <div class="imgBx">
+            <img id="sp2" src="images/menu2.jpg" alt="" />
+          </div>
+          <div class="text">
+            <h3>Special Soup</h3>
+          </div>
+          <td><a class="a2" onclick="saveforlater('Special Soup', 'images/menu2.jpg')">Save for later</a></td> <br />
+          <td><a class="a3" onclick="like(event,'t2')">Like</a></td>
+        </div>
+      </tr>
+
+      <tr id="t3">
+        <div class="box">
+          <div class="imgBx">
+            <img id="sp3" src="images/menu3.jpg" alt="" />
+          </div>
+          <div class="text">
+            <h3>Special Pasta</h3>
+          </div>
+          <td><a class="a2" onclick="saveforlater('Special Pasta','images/menu3.jpg')">Save for later</a></td><br />
+          <td><a class="a3" onclick="like(event, 't3')">Like</a></td>
+        </div>
+      </tr>
+
+      <tr id="t4">
+        <div class="box">
+          <div class="imgBx">
+            <img id="sp4" src="images/menu4.jpg" alt="" />
+          </div>
+          <div class="text">
+            <h3>Special Chicken Salad</h3>
+          </div>
+          <td><a class="a2" onclick="saveforlater('Special Chicken Salad','images/menu4.jpg')">Save for later</a></td> <br />
+          <td><a class="a3" onclick="like(event , 't4')">Like</a></td>
+        </div>
+      </tr>
+
+      <tr id="t5">
+        <div class="box">
+          <div class="imgBx">
+            <img id="sp5" src="images/menu5.jpg" alt="" />
+
+          </div>
+          <div class="text">
+            <h3>Special Soup</h3>
+          </div>
+          <td><a class="a2" onclick="saveforlater('Special Soup','images/menu5.jpg')">Save for later</a></td> <br />
+          <td><a class="a3" onclick="like(event , 't5')">Like</a></td>
+        </div>
+      </tr>
+
+      <tr id="t6">
+        <div class="box">
+          <div class="imgBx">
+            <img id="sp6" src="images/menu6.jpg" alt="" />
+          </div>
+          <div class="text">
+            <h3>Special Chicken</h3>
+          </div>
+          <td><a class="a2" onclick="saveforlater('Special Chicken','images/menu6.jpg')">Save for later</a></td> <br />
+          <td><a class="a3" onclick="like(event ,'t6')">Like</a></td>
+        </div>
+      </tr>
+      <div class="title">
+        <a href="#" class="btn">View All</a>
+      </div>
+
+      <!--Testimonial Section page-->
+
+      <section class="testimonials" id="testimonials">
+        <div class="title white">
+          <h2 class="titleText">They <span>S</span>aid About Us</h2>
+          <p> Testimonials not only gives our new customers a brief overview of what goes on at our events but also will
+            show you the diversity in menus planned and how well we adapt to different environments. We love to hear
+            from our raving fans and hope you do as well.</p>
+        </div>
+
+        <div class="content">
+
+          <div class="box">
+            <div class="imgBx">
+              <img src="images/testi1.jpg" alt="" />
+            </div>
+            <div class="text">
+              <p>Amazing, amazing, AMAZING! So many compliments!! Your wait staff was so wonderful! The bartenders were
+                phenomenal! I got in a fight with 3 of my friends over the green bean casserole because we all wanted to
+                take it home. I literally cannot thank you enough for the wonderful job everyone did! THANK YOU!!!!</p>
+              <h3>Jesse</h3>
+            </div>
+          </div>
+
+
+          <div class="box">
+            <div class="imgBx">
+              <img src="images/testi2.jpg" alt="" />
+            </div>
+            <div class="text">
+              <p>From the beginning Chefs Catering was the most accommodating vendor we had for our wedding. Chefs
+                Catering didnt have the normal buffet style food, from the salad with a twist to the pasta station made
+                how you wanted it, to cooking the food on site at Sonnenberg Gardens made it much more appealing to all
+                of our guest. Everyone commented on how different and good the food was to the normal buffet food. No
+                one except myself knew that Chefs Catering (Mike) took full control to make sure everything went smooth.
+              </p>
+              <h3>ROJEK</h3>
+            </div>
+          </div>
+
+
+          <div class="box">
+            <div class="imgBx">
+              <img id="sp3" src="images/testi3.jpg" alt="" />
+            </div>
+            <div class="text">
+              <p>We wanted a very special luncheon for my daughter-in-laws baby shower, and Mike Zazzaro, Chefs
+                Catering, did a wonderful and professional job for us. He listened to our needs, made great suggestions
+                and personalized the menu to our preferences. The food was not only spectacular, but elegantly served on
+                silver platters. All of our guests, the aunts, cousins, friends of the mommy-to-be, raved about how
+                delicious everything was. Thank you so much, Mike! We wouldnt hesitate to use Chefs Catering again, and
+                would highly recommend you to our friends.</p>
+              <h3>MARY ANN WADE</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Contact form page-->
+      <section class="Contact" id="Contact">
+        <div class="title">
+          <h2 class="titleText"> <span>C</span>ontact Us</h2>
+
+        </div>
+        <div class="contactForm">
+          <div class="drp">
+            <h3>Request a new recipe</h3>
+            <button class="drp_but">Reason for contacting</button>
+            <div class="drp-content">
+              <a id="l1" href="#">Question</a>
+              <a id="l2" href="#">Suggestion</a>
+              <a id="l3" href="#">Complaint</a>
+            </div>
+          </div>
+          <div class="inputBox">
+            <input type="text" id="Reason" name="Reason" required>
+          </div>
+
+          <div class="inputBox">
+            <input type="text" placeholder="Name">
+          </div>
+          <div class="inputBox">
+            <input type="text" placeholder="Email">
+          </div>
+          <div class="inputBox">
+            <textarea placeholder="Description"></textarea>
+          </div>
+
+          <div class="inputBox">
+            <input type="submit" value="Send">
+          </div>
+
+
+        </div>
+      </section>
+
+  </section>
+
+  <!--leave your comments-->
+  <section class="Comment" id="Comment">
+    <div class="title">
+      <h2 class="titleText"> <span>L</span>eave Your Comments</h2>
+    </div><br>
+
+    </div>
+    <div class="commentForm">
+      <h3>Comments</h3>
+      <table>
+        <th>
+          <tr>
+
+
+            <div class="inputBox">
+              <input type="text" placeholder="Name" id="name">
+            </div>
+
+            <div class="inputBox">
+              <input type="text" placeholder="Your Comment" id="comment">
+            </div>
+            <div class="inputBox">
+              <input type="submit" class="clickitem" onclick="inputitem()" value="Save">
+            </div>
+          </tr>
+        </th>
+        <tbody id="tabledata">
+
+
+
+        </tbody>
+
+      </table>
+    </div>
+  </section>
+  </section>
+
+  <section class="SavedItems" id="SavedItems">
+    <div class="title">
+      <h2 class="titleText"> <span>S</span>aved Items</h2>
+
+    </div>
+    <div class="SaveItemsForm">
+
+      <div id="tableContent">
+      
+    </div>
+  </section>
+
+  </div>
+
+
+
+  <div class="title">
+    <a href="#" class="btn">View All</a>
+  </div>
+  <a href="https://www.bbc.co.uk/food/recipes">Other Cool Recipes</a>
+
+
+  <!--Keeps header section firm whilst scrolling throughout the webpage-->
+  <script type="text/javascript" src="main.js">
+
+
+    window.addEventListener("scroll", function () {
+      const header = document.querySelector("header");
+      header.classList.toggle("sticky", window.scrollY > 0);
+    });
+
+    function toggleMenu() {
+      const menuToggle = document.querySelector('.menuToggle');
+      const navigation = document.querySelector('.navigation');
+      menuToggle.classList.toggle('active');
+      navigation.classList.toggle('active');
+    }
+
+  </script>
+</body>
+
+</html>
